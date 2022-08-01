@@ -17,10 +17,9 @@ class App extends Component {
 
   filteredContacts = () => {
     const { contacts, filter } = this.state;
-    const normalizedFilter = filter.toLowerCase().trim();
 
     return contacts.filter(contact =>
-      contact.name.toLowerCase().includes(normalizedFilter)
+      contact.name.toLowerCase().includes(filter.toLowerCase().trim())
     );
   };
 
@@ -30,17 +29,14 @@ class App extends Component {
     this.setState({ [name]: value });
   };
 
-  checkContact = data => {
-    const { contacts } = this.state;
-    return contacts.find(
-      contact => contact.name.toLowerCase() === data.name.toLowerCase()
-    );
-  };
-
   addContact = data => {
-    if (this.checkContact(data)) {
+    const { contacts } = this.state;
+    if (
+      contacts.find(
+        contact => contact.name.toLowerCase() === data.name.toLowerCase()
+      )
+    )
       return alert(`${data.name} is already in contacts.`);
-    }
 
     this.setState(prev => ({ contacts: [...prev.contacts, data] }));
   };
