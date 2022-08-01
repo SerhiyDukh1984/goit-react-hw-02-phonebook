@@ -22,13 +22,13 @@ class Contact extends Component {
   handleSubmit = e => {
     e.preventDefault();
     const { name, number } = this.state;
-    this.props.addContact({ name: name, number: number, id: nanoid() });
-    this.setState({ initialState });
+    this.props.addContact({ id: nanoid(), name: name, number: number });
+    this.setState(initialState);
   };
 
   render() {
     return (
-      <form className={s.form}>
+      <form className={s.form} onSubmit={this.handleSubmit}>
         <label className={s.label}>
           <h2 className={s.title}>Name</h2>
           <input
