@@ -18,3 +18,8 @@ export default function Filter({ filter, handleChange }) {
     </label>
   );
 }
+
+Filter.propTypes = {
+  filter: PropTypes.string.isRequired,
+  handleChange: PropTypes.func.isRequired,
+};

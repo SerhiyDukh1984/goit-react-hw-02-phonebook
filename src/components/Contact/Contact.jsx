@@ -64,4 +64,8 @@ class Contact extends Component {
   }
 }
 
+Contact.propTypes = {
+  addContact: PropTypes.func.isRequired,
+};
+
 export default Contact;

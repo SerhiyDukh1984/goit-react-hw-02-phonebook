@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import s from './ContactsList.module.css';
 
 export default function ContactsList({ filteredContacts, deleteContact }) {
@@ -18,3 +19,8 @@ export default function ContactsList({ filteredContacts, deleteContact }) {
     </ul>
   );
 }
+
+ContactsList.propTypes = {
+  filteredContacts: PropTypes.array.isRequired,
+  deleteContact: PropTypes.func.isRequired,
+};
