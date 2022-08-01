@@ -64,4 +64,6 @@ class Contact extends Component {
   }
 }
 
+Contact;
+
 export default Contact;
