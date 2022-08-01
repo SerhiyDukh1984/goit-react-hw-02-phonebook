@@ -3,11 +3,6 @@ import PropTypes from 'prop-types';
 import { nanoid } from 'nanoid';
 import s from './Contact.module.css';
 
-const initialState = {
-  name: '',
-  number: '',
-};
-
 class Contact extends Component {
   state = {
     name: '',
@@ -23,7 +18,11 @@ class Contact extends Component {
     e.preventDefault();
     const { name, number } = this.state;
     this.props.addContact({ id: nanoid(), name: name, number: number });
-    this.setState(initialState);
+    this.reset();
+  };
+
+  reset = () => {
+    this.setState({ name: '', number: '' });
   };
 
   render() {
