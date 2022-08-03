@@ -1,6 +1,6 @@
 import { Component } from 'react';
 import Section from './Section/Section';
-import Contact from './Contact/Contact';
+import ContactForm from './ContactForm/ContactForm';
 import ContactsList from './ContactsList/ContactsList';
 import Filter from './Filter/Filter';
 
@@ -52,7 +52,7 @@ class App extends Component {
 
     return (
       <Section title="Phonebook">
-        <Contact addContact={this.addContact} />
+        <ContactForm addContact={this.addContact} />
         <h2>Contacts</h2>
         <Filter filter={filter} handleChange={this.handleChange} />
         <ContactsList
